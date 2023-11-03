@@ -47,9 +47,9 @@ UserProfile.prototype.setDiscount = function (veteranStatus, firstResponderStatu
 // }
 
 //Order constructor
-function Order(userObject, pizzaObject) {
+function Order(userObject, pizzas) {
   this.user = userObject;
-  this.pizza = pizzaObject ? [pizzaObject] : [];
+  this.pizza = pizzas// ? [pizzaObject] : [];
 }
 
 Order.prototype.setCost = function() {
@@ -57,21 +57,19 @@ Order.prototype.setCost = function() {
   const pizzaPrices = { small: 8, medium: 10, large: 12, extralarge: 14 };
   const toppingPrices = { pepperoni: 1, sausage: 1, jalepeno: 0.5, anchovies: 0.5 };
 
-  for (let i = 0; i < this.pizza.length; i++) {
-    let pizzaCost = pizzaPrices[this.pizza[i].size];
-
-
-    for (let j = 0; j < this.pizza[i].toppings.length; j++) {
-      let topping = this.pizza[i].toppings[j];
-      pizzaCost += (toppingPrices[topping] || 0);
-    }
+  this.pizza.forEach(pizza => {
+    let pizzaCost = pizzaPrices[pizza.size] || 0;
+    pizza.toppings.forEach(topping => {
+      pizzaCost += toppingPrices[topping] || 0;
+    });
     totalCost += pizzaCost;
-  }
+  });
+
 
   let discounts = 0;
-  if (this.user[0].veteranStatus) discounts += 1;
-  if (this.user[0].firstResponderStatus) discounts += 1;
-  if (this.user[0].preferredCustomer) discounts += 1;
+  if (this.user.veteranStatus) discounts += 1;
+  if (this.user.firstResponderStatus) discounts += 1;
+  if (this.user.preferredCustomer) discounts += 1;
 
   totalCost -= this.pizza.length * discounts || 0;
 
@@ -84,15 +82,11 @@ Order.prototype.setCost = function() {
 
 //TESTING MADE EASIER
 let myUser = new UserProfile("Christopher", "5936 Bay Point Dr");
-let myPizza = new Pizza("medium");
-
-myUser.setName("Christopher");
-myUser.setAddress("5936 Bay Point Dr");
 myUser.setDiscount(true, true, true);
-myPizza.setToppings("jalepeno", "anchovies");
-myPizza.setSize("medium");
-let myOrder = new Order(myUser, [myPizza]);
-console.log(myOrder);
-myOrder.setCost();
 
+let myPizza = new Pizza("medium");
+myPizza.setToppings(["jalepeno", "pepperoni"]);
+
+let myOrder = new Order(myUser, [myPizza]);
+myOrder.setCost();
 
