@@ -12,13 +12,17 @@ function UserProfile(name, address, preferredCustomer) {
 }
 
 function Order(userObject, pizzaObject) {
-  this.user = [];
-  this.pizza = [];
+  this.user = userObject ? [userObject] : [];
+  this.pizza = pizzaObject ? [pizzaObject] : [];
 }
 
-Order.prototype.addUser = function(user) {
-  this.user.push(user);
-}
-Order.prototype.addPizza = function(pizza) {
-  this.pizza.push(pizza);
-}
+// Order.prototype.addUser = function(user) {
+//   this.user.push(user);
+// }
+// Order.prototype.addPizza = function(pizza) {
+//   this.pizza.push(pizza);
+// }
+
+//TESTING MADE EASIER
+myUser = new UserProfile("Christopher", "5936 Bay Point Dr", true);
+myPizza = new BuildPizza("pepperoni", "large", false, false);
