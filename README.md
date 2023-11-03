@@ -10,3 +10,9 @@ Describe: UserProfile() will create a user object
 Test: "It will create a user object with name, address, and preferredCustomer status.
 Code: myUser = new UserProfile("Christopher", "4939 Fake St", true);
 Expected Output: myUser {Christopher, 4939 Fake St, preferredCustomer = true} 
+
+Describe: Order() will store user objects and pizza objects in parallel arrays
+
+Test: "It will store user objects and pizza objects in parallel arrays"
+Code: myOrder = new Order(myPizza, myUser);
+Expected: myOrder {myPizza, myUser}
