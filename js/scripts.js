@@ -4,8 +4,8 @@
 function Pizza() {
   this.toppings = [];
   this.size = size;
-
 }
+
 //Pizza prototype methods
 BuildPizza.prototype.setToppings = function (toppings) {
   this.toppings = toppings ? [toppings] : [];
@@ -51,6 +51,14 @@ function Order(userObject, pizzaObject) {
 }
 
 Order.prototype.setCost() {
+  let totalCost = 0;
+  const pizzaPrices = { small: 8, medium: 10, large: 12, extralarge: 14 };
+  const toppingPrices = { pepperoni: 1, sausage: 1, jalepeno: 0.5, anchovies: 0.5 };
+
+  for (let i = 0; i < this.pizza.length; i++) {
+    let pizzaCost = pizzaPrices[this.pizza[i].size];
+  }
+
 
 }
 
