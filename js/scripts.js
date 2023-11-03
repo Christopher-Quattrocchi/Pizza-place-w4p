@@ -57,6 +57,7 @@ Order.prototype.setCost() {
 
   for (let i = 0; i < this.pizza.length; i++) {
     let pizzaCost = pizzaPrices[this.pizza[i].size];
+    pizzaCost += toppingPrices[topping] || 0;
   }
 
 
