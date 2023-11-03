@@ -16,6 +16,10 @@ function Order(userObject, pizzaObject) {
   this.pizza = pizzaObject ? [pizzaObject] : [];
 }
 
+Order.prototype.Cost() {
+  
+}
+
 // Order.prototype.addUser = function(user) {
 //   this.user.push(user);
 // }

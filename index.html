@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,47 @@
   <script src="js/scripts.js"></script>
   <title>Jimmy's Recycled Pizza</title>
 </head>
+
 <body>
-  
+  <h1>Jimmy's Recycled Pizza</h1>
+  <form id="pizzaform">
+    <form id="toppings">
+      <input type="checkbox" id="pepperoni" value="pepperoni">
+      <label for="pepperoni">Pepperoni</label>
+
+      <input type="checkbox" id="sausage" value="sausage">
+      <label for="sausage">Sausage</label>
+
+      <input type="checkbox" id="jalepeno" value="jalepeno">
+      <label for="jalepeno">Jalepeno</label>
+
+      <input type="checkbox" id="anchovies" value="anchovies">
+      <label for="anchovies">Anchovies</label>
+    </form>
+
+    <select name="size" id="size">
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+      <option value="extralarge">Extra Large</option>
+    </select>
+
+    <form id="user">
+      <label for="name">Name:</label>
+      <input type="text" id="name">
+      <label for="address">Address:</label>
+      <input type="text" id="address">
+
+      <select name="preferred" id="preferred">
+        <option value="yes">yes</option>
+        <option value="yes">no</option>
+      </select>
+
+    </form>
+    <button type="submit">Submit</button>
+  </form>
+
+
 </body>
+
 </html>

@@ -24,3 +24,9 @@ Describe: addUser and addPizza will push objects to Order()
 Test: "store objects to Order"
 Code: 
 Expected Output: myOrder(Chris, myPizza);
+
+Describe: Order.prototype.Cost() will take all the pizzas in the array stored in Order and calculate a cost
+
+Test: "It will calculate a price"
+Code: myOrder.prototype.Cost()
+Expected Output: $12 or whatever
