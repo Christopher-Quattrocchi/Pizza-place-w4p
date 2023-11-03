@@ -1,31 +1,58 @@
-function BuildPizza(toppings, size, veteranStatus, firstResponderStatus) {
-  this.toppings = toppings;
+//Business Logic
+
+//Pizza Constructor
+function Pizza() {
+  this.toppings = [];
   this.size = size;
-  this.veteranStatus = veteranStatus;
-  this.firstResponderStatus = firstResponderStatus;
+
+}
+//Pizza prototype methods
+BuildPizza.prototype.setToppings = function (toppings) {
+  this.toppings = toppings ? [toppings] : [];
+  return this;
 }
 
-function UserProfile(name, address, preferredCustomer) {
+BuildPizza.prototype.setSize = function (size) {
+  this.size = size;
+}
+
+//UserProfile Constructor
+function UserProfile() {
   this.name = name;
   this.address = address;
-  this.preferredCustomer = preferredCustomer;
+  this.veteranStatus = false;
+  this.firstResponderStatus = false;
+  this.preferredCustomer = false;
+  this.orderCount = 0;
 }
 
+UserProfile.prototype.setName = function (name) {
+  this.name = name;
+  return this;
+}
+UserProfile.prototype.setAddress = function (address) {
+  this.address = address;
+  return this;
+}
+UserProfile.prototype.setPreferredCustomer = function (preferredCustomer) {
+  this.preferredCustomer = preferredCustomer;
+  return this;
+}
+
+UserProfile.prototype.setOrderCount = function (orderCount) {
+  this.orderCount = orderCount;
+  return this;
+}
+
+//Order constructor
 function Order(userObject, pizzaObject) {
   this.user = userObject ? [userObject] : [];
   this.pizza = pizzaObject ? [pizzaObject] : [];
 }
 
-Order.prototype.Cost() {
-  
-}
+Order.prototype.setCost() {
 
-// Order.prototype.addUser = function(user) {
-//   this.user.push(user);
-// }
-// Order.prototype.addPizza = function(pizza) {
-//   this.pizza.push(pizza);
-// }
+}
 
 //TESTING MADE EASIER
 myUser = new UserProfile("Christopher", "5936 Bay Point Dr", true);
