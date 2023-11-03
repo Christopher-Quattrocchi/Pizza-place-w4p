@@ -10,3 +10,15 @@ function UserProfile(name, address, preferredCustomer) {
   this.address = address;
   this.preferredCustomer = preferredCustomer;
 }
+
+function Order(userObject, pizzaObject) {
+  this.user = [];
+  this.pizza = [];
+}
+
+Order.prototype.addUser = function(user) {
+  this.user = this.user.push(user);
+}
+Order.prototype.addPizza = function(pizza) {
+  this.pizza = this.pizza.push(pizza);
+}
