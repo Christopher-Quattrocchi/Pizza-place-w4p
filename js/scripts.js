@@ -17,8 +17,8 @@ function Order(userObject, pizzaObject) {
 }
 
 Order.prototype.addUser = function(user) {
-  this.user = this.user.push(user);
+  this.user.push(user);
 }
 Order.prototype.addPizza = function(pizza) {
-  this.pizza = this.pizza.push(pizza);
+  this.pizza.push(pizza);
 }

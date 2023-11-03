@@ -11,8 +11,16 @@ Test: "It will create a user object with name, address, and preferredCustomer st
 Code: myUser = new UserProfile("Christopher", "4939 Fake St", true);
 Expected Output: myUser {Christopher, 4939 Fake St, preferredCustomer = true} 
 
+
 Describe: Order() will store user objects and pizza objects in parallel arrays
 
+NEED prototype functions to make this work
 Test: "It will store user objects and pizza objects in parallel arrays"
 Code: myOrder = new Order(myPizza, myUser);
 Expected: myOrder {myPizza, myUser}
+
+PASSED
+Describe: addUser and addPizza will push objects to Order()
+Test: "store objects to Order"
+Code: 
+Expected Output: myOrder(Chris, myPizza);
