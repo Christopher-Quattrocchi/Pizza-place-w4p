@@ -27,9 +27,7 @@ Expected Output: myOrder(Chris, myPizza);
 
 Describe: Order.prototype.Cost() will take all the pizzas in the array stored in Order and calculate a cost
 
-This is a huge one
+SUCCESS
 Test: "It will calculate a price"
 Code: myOrder.prototype.Cost()
 Expected Output: $12 or whatever
-
-Currently imcomplete, will update
