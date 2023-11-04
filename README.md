@@ -1,3 +1,48 @@
+
+
+# _Portfolio Project - End of Week Four_
+
+#### _HTML, JS branching, objects, loops, and arrays. Bootstrap was used. Nov 3rd 2023_
+
+#### By _**Chris Quattrocchi**_
+
+## Description
+
+_End of week four recap. JavaScript practice with loops, arrays, and branching. User can create as many pizzas as they'd like, must create a user profile, and the result along with price is returned._
+
+
+
+## Setup/Installation Requirements
+
+* _clone repository or use the download link_
+* _extract zip file if required_
+* _open index.html_
+
+
+## Known Bugs
+
+_Currently not known_
+
+## Support and contact details
+
+_chrisquattrocchi@gmail.com, phone number is 503-841-0072_
+
+## Technologies Used
+
+_HTML, CSS, Git, JS and Bootstrap were used in the creation of this page_
+
+## Link to gh-pages
+
+
+[gh-pages link]([
+](https://christopher-quattrocchi.github.io/Pizza-place-w4p/)
+https://christopher-quattrocchi.github.io/Pizza-place-w4p/)
+
+### License
+
+Copyright (c) 2023-3077 **_{Chris Quattrocchi}_**
+
+
 Describe: BuildPizza() will create a pizza object
 
 SUCCESS--------
