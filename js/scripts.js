@@ -65,7 +65,6 @@ Order.prototype.setCost = function () {
     totalCost += pizzaCost;
   });
 
-
   let discounts = 0;
   if (this.user.veteranStatus) discounts += 1;
   if (this.user.firstResponderStatus) discounts += 1;
@@ -75,9 +74,8 @@ Order.prototype.setCost = function () {
 
   this.totalCost = totalCost;
   console.log(totalCost);
-  // return this
-}
 
+}
 
 
 //TESTING MADE EASIER
@@ -117,9 +115,9 @@ function createUser(e) {
   const userName = document.getElementById("name").value;
   const userAddress = document.getElementById("address").value;
 
-  const isVeteran = document.querySelector('input[name="veteran"]:checked');
-  const isFirstResponder = document.querySelector('input[name="firstresponder"]:checked');
-  const isPreferredCustomer = document.querySelector('input[name="preferred"]:checked');
+  const isVeteran = document.querySelector('input[name="veteran"]').checked;
+  const isFirstResponder = document.querySelector('input[name="firstresponder"]').checked;
+  const isPreferredCustomer = document.querySelector('input[name="preferred"]').checked;
 
   let newUser = new UserProfile(userName, userAddress);
   newUser.setDiscount(isVeteran, isFirstResponder, isPreferredCustomer);
