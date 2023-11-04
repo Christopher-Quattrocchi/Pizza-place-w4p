@@ -124,5 +124,48 @@ function createUser(e) {
 
   let newOrder = new Order(newUser, pizzas);
   newOrder.setCost();
+  newOrder.showOrder();
   pizzas = [];
-} 
+}
+
+Order.prototype.showOrder = function () {
+  const showOutput = document.getElementById("show-output");
+  // showOutput.innerHTML = "";
+
+  let pName = document.createElement("p");
+  let pAddress = document.createElement("p");
+
+  // pName.append("Name: "  +  this.user.name);
+  // pAddress.append("Address: " + this.user.address);
+
+  pName.textContent = "Name: " + this.user.name;
+  pAddress.textContent = "Address: " + this.user.address;
+
+
+  console.log(pName, pAddress);
+  showOutput.appendChild(pName);
+  showOutput.appendChild(pAddress);
+
+
+
+  this.pizza.forEach((pizza, index) => {
+    let pPizzas = document.createElement("p");
+
+    let pizzaText = "You ordered a " + pizza.size + " pizza";
+    // pPizzas.append("You ordered a " + pizza.size + "pizza");
+    if (pizza.toppings.length > 0) {
+      const toppingsText = pizza.toppings.join(", ");
+      // pPizzas.append("with " + toppingsText + ".");
+      pizzaText += " with " + toppingsText + ".";
+    }
+    // showOutput.append(pPizzas);
+    pPizzas.textContent = pizzaText;
+
+    // if (index !== this.pizza.length - 1) {
+    //   pPizzas.append(document.createElement("br"));
+    // }
+    showOutput.appendChild(pPizzas);
+  });
+
+
+}
