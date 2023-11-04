@@ -50,6 +50,7 @@ UserProfile.prototype.setDiscount = function (veteranStatus, firstResponderStatu
 function Order(userObject, pizzas) {
   this.user = userObject;
   this.pizza = pizzas;
+  orderCost = "";
 }
 
 Order.prototype.setCost = function () {
@@ -73,6 +74,7 @@ Order.prototype.setCost = function () {
   totalCost -= this.pizza.length * discounts || 0;
 
   this.totalCost = totalCost;
+  this.orderCost = totalCost;
   console.log(totalCost);
 
 }
@@ -134,17 +136,18 @@ Order.prototype.showOrder = function () {
 
   let pName = document.createElement("p");
   let pAddress = document.createElement("p");
+  let pCost = document.createElement("p");
 
-  // pName.append("Name: "  +  this.user.name);
-  // pAddress.append("Address: " + this.user.address);
+  pCost.textContent = "Your total is: $" + this.orderCost;
+
+ 
 
   pName.textContent = "Name: " + this.user.name;
   pAddress.textContent = "Address: " + this.user.address;
 
 
   console.log(pName, pAddress);
-  showOutput.appendChild(pName);
-  showOutput.appendChild(pAddress);
+  showOutput.append(pName, pAddress, pCost);
 
 
 
