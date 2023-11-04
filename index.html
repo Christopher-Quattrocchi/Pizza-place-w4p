@@ -4,15 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/scripts.js"></script>
   <title>Jimmy's Recycled Pizza</title>
 </head>
 
 <body>
-  <h1>Jimmy's Recycled Pizza</h1>
-  <form id="pizza-form">
 
+
+  <div id="header">
+    <h1>Jimmy's Recycled Pizza</h1>
+    <p>Welcome! Order as many pizzas as you'd like, and then create a user profile that can be attached to the order!
+      Your
+      pizzas and cost will be displayed.</p>
+  </div>
+
+
+
+
+  <form id="pizza-form">
     <input type="checkbox" name="toppings" id="pepperoni" value="pepperoni">
     <label for="pepperoni">Pepperoni</label>
 
@@ -26,16 +37,20 @@
     <label for="anchovies">Anchovies</label>
 
 
+
     <select name="size" id="size">
       <option value="small">Small</option>
       <option value="medium">Medium</option>
       <option value="large">Large</option>
-      <option value="extralarge">Extra Large</option>
+      <option value="extra-large">Extra Large</option>
     </select>
 
 
     <button type="submit">Create Pizza</button>
   </form>
+
+
+
 
   <form id="user-form">
     <label for="name">Name:</label>
@@ -50,9 +65,13 @@
     <input type="checkbox" name="preferred" id="preferred" value="preferred">
     <label for="preferred">Are you a preferred customer?</label>
 
-   
-    <button type="submit">Order</button>
+
+    <button type="submit" id="order-button">Order</button>
   </form>
+
+
+
+
 
   <div id="show-output">
 

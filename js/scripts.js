@@ -23,28 +23,24 @@ function UserProfile(name, address) {
   this.veteranStatus = false;
   this.firstResponderStatus = false;
   this.preferredCustomer = false;
-  // this.orderCount = 0;
 }
 
 UserProfile.prototype.setName = function (name) {
   this.name = name;
   return this;
 }
+
 UserProfile.prototype.setAddress = function (address) {
   this.address = address;
   return this;
 }
+
 UserProfile.prototype.setDiscount = function (veteranStatus, firstResponderStatus, preferredCustomer) {
   this.veteranStatus = veteranStatus;
   this.firstResponderStatus = firstResponderStatus;
   this.preferredCustomer = preferredCustomer;
   return this;
 }
-
-// UserProfile.prototype.setOrderCount = function (orderCount) {
-//   this.orderCount = orderCount;
-//   return this;
-// }
 
 //Order constructor
 function Order(userObject, pizzas) {
@@ -55,7 +51,7 @@ function Order(userObject, pizzas) {
 
 Order.prototype.setCost = function () {
   let totalCost = 0;
-  const pizzaPrices = { small: 8, medium: 10, large: 12, extralarge: 14 };
+  const pizzaPrices = { small: 8, medium: 10, large: 12, "extra-large": 14 };
   const toppingPrices = { pepperoni: 1, sausage: 1, jalepeno: 0.5, anchovies: 0.5 };
 
   this.pizza.forEach(pizza => {
@@ -76,24 +72,14 @@ Order.prototype.setCost = function () {
   this.totalCost = totalCost;
   this.orderCost = totalCost;
   console.log(totalCost);
-
 }
-
-
-//TESTING MADE EASIER
-// let myUser = new UserProfile("Christopher", "5936 Bay Point Dr");
-// myUser.setDiscount(true, true, true);
-
-// let myPizza = new Pizza("medium");
-// myPizza.setToppings(["jalepeno", "pepperoni"]);
-
-// let myOrder = new Order(myUser, [myPizza]);
-// myOrder.setCost();
 
 //UI Logic
 window.addEventListener("load", function () {
-  this.document.getElementById("pizza-form").addEventListener("submit", createPizzas);
-  this.document.getElementById("user-form").addEventListener("submit", createUser);
+  document.getElementById("pizza-form").addEventListener("submit", createPizzas);
+  document.getElementById("user-form").addEventListener("submit", createUser);
+  userButton = document.getElementById("order-button");
+  userButton.disabled = true;
 });
 
 
@@ -110,6 +96,8 @@ function createPizzas(e) {
 
   pizzas.push(newPizza);
   console.log(newPizza);
+
+  document.getElementById("order-button").disabled = false;
 }
 
 function createUser(e) {
@@ -128,11 +116,11 @@ function createUser(e) {
   newOrder.setCost();
   newOrder.showOrder();
   pizzas = [];
+  document.getElementById("user-button").disabled = true;
 }
 
 Order.prototype.showOrder = function () {
   const showOutput = document.getElementById("show-output");
-  // showOutput.innerHTML = "";
 
   let pName = document.createElement("p");
   let pAddress = document.createElement("p");
@@ -140,11 +128,8 @@ Order.prototype.showOrder = function () {
 
   pCost.textContent = "Your total is: $" + this.orderCost;
 
- 
-
   pName.textContent = "Name: " + this.user.name;
   pAddress.textContent = "Address: " + this.user.address;
-
 
   console.log(pName, pAddress);
   showOutput.append(pName, pAddress, pCost);
@@ -155,18 +140,12 @@ Order.prototype.showOrder = function () {
     let pPizzas = document.createElement("p");
 
     let pizzaText = "You ordered a " + pizza.size + " pizza";
-    // pPizzas.append("You ordered a " + pizza.size + "pizza");
     if (pizza.toppings.length > 0) {
       const toppingsText = pizza.toppings.join(", ");
-      // pPizzas.append("with " + toppingsText + ".");
       pizzaText += " with " + toppingsText + ".";
     }
-    // showOutput.append(pPizzas);
     pPizzas.textContent = pizzaText;
 
-    // if (index !== this.pizza.length - 1) {
-    //   pPizzas.append(document.createElement("br"));
-    // }
     showOutput.appendChild(pPizzas);
   });
 

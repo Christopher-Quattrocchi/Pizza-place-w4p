@@ -36,3 +36,8 @@ SUCCESS
 Test: I want to code to dynamically create as many pizza objects as a user wants, but only one user per order
 Code:
 Expected Output:
+
+SUCCESS
+Test: I want it to display all pizzas ordered along with the user's name and address
+Code:
+Expected Output:
