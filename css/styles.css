@@ -1,0 +1,27 @@
+#header {
+  background-color: aliceblue;
+}
+
+img {
+  max-width: 50%;
+  max-height: 50%;
+  margin-top: 1%;
+  margin-bottom: 3%;
+  border-radius: 50px;
+}
+
+#pizza-form-holder {
+  background-color: lightblue;
+  border-radius: 10px;
+}
+
+#user-form-holder {
+  background-color: lightseagreen;
+  border-radius: 10px;
+}
+
+#show-output {
+  background-color: aquamarine;
+  border: 1px solid black;
+  border-radius: 15px;
+}
