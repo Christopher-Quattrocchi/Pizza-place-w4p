@@ -31,3 +31,7 @@ SUCCESS
 Test: "It will calculate a price"
 Code: myOrder.prototype.Cost()
 Expected Output: $12 or whatever
+
+Test: I want to code to dynamically create as many pizza objects as a user wants, but only one user per order
+Code:
+Expected Output:
